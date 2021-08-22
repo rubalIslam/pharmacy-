@@ -50,6 +50,7 @@ export const getUserProfile = (id) => {
 }
 
 export const logoutUser = (dispatch) => {
+    console.log("logout::")
     AsyncStorage.removeItem("jwt");
     dispatch(setCurrentUser({}))
 }

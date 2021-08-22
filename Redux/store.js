@@ -4,8 +4,11 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
 import cartItems from './Reducers/cartItem'
 
+import { productReducer } from './Reducers/productReducer';
+
 const reducers = combineReducers({
-    cartItems: cartItems
+    cartItems: cartItems,
+    store: productReducer,
 })
 
 const store = createStore(

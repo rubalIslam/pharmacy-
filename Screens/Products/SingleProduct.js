@@ -51,12 +51,12 @@ const SingleProduct = (props) => {
                 </View>
                 <View style={styles.availabilityContainer}>
                     <View style={styles.availability}>
-                        <Text style={{ marginRight: 10 }}>
+                        <Text style={{ marginRight: 10, color:"white" }}>
                             Availability: {availabilityText}
                         </Text>
                         {availability}
                     </View>
-                    <Text>{item.description}</Text>
+                    <Text style={{color:"white"}}>{item.description}</Text>
                 </View>
             </ScrollView>
 
@@ -96,12 +96,15 @@ const mapToDispatchToProps = (dispatch) => {
 const styles = StyleSheet.create({
     container: {
         position: 'relative',
-        height: '100%'
+        height: '100%',
+        backgroundColor: "black",
+        color:"white"
     },
     imageContainer: {
         backgroundColor: 'white',
         padding: 0,
-        margin: 0
+        margin: 0,
+        color:"white"
     },
     image: {
         width: '100%',
@@ -110,28 +113,32 @@ const styles = StyleSheet.create({
     contentContainer: {
         marginTop: 20,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        color:"white"
     },
     contentHeader: {
         fontWeight: 'bold',
-        marginBottom: 20
+        marginBottom: 20,
+        color:"white"
     },
     contentText: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 20
+        marginBottom: 20,
+        color:"white"
     },
     bottomContainer: {
         flexDirection: 'row',
         position: 'absolute',
         bottom: 0,
         left: 0,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        color:"white"
     },
     price: {
         fontSize: 24,
         margin: 20,
-        color: 'red'
+        color: 'blue'
     },
     availabilityContainer: {
         marginBottom: 20,

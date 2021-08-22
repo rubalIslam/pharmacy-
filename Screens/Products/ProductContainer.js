@@ -45,7 +45,7 @@ const ProductContainer = (props) => {
             setProductsCtg(res.data);
             setInitialState(res.data);
             setLoading(false);
-            console.log(res);
+            //console.log(res);
           })
           .catch((error) => {
             console.log('::Api call error',baseURL)
@@ -109,7 +109,9 @@ const ProductContainer = (props) => {
   return (
     <>
     {loading == false ? (
- <Container>
+ <Container 
+  style={{ backgroundColor: "black"}}
+ >
  <Header searchBar rounded>
    <Item>
      <Icon name="ios-search" />
@@ -123,12 +125,13 @@ const ProductContainer = (props) => {
  </Header>
  {focus == true ? (
    <SearchedProduct 
+   style={{ backgroundColor: "black"}}
    navigation={props.navigation}
    productsFiltered={productsFiltered} />
  ) : (
    <ScrollView>
-     <View>
-       <View>
+     <View style={{ backgroundColor: "black"}}>
+       <View style={{ backgroundColor: "black"}}>
          <Banner />
        </View>
        <View>
@@ -164,7 +167,7 @@ const ProductContainer = (props) => {
 </Container>
     ) : (
       // Loading
-      <Container style={[styles.center, { backgroundColor: "#f2f2f2" }]}>
+      <Container style={[styles.center, { backgroundColor: "black" }]}>
         <ActivityIndicator size="large" color="red" />
       </Container>
     )}

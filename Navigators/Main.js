@@ -11,14 +11,28 @@ import AdminNavigator from "./AdminNavigator";
 
 import CartIcon from "../Shared/CartIcon";
 import AuthGlobal from "../Context/store/AuthGlobal";
+import { createStackNavigator } from "@react-navigation/stack";
+import IntroScreen from "../Screens/IntroScreen/IntroScreen";
 
 const Tab = createBottomTabNavigator();
 
+const IntroStack = createStackNavigator();
+
+
 const Main = () => {
 
-  const context = useContext(AuthGlobal)
+  const IntroStackScreen = () => (
+    <IntroStack.Navigator>
+      <IntroStack.Screen
+        name="IntroScreen"
+        component={IntroScreen}
+        options={{ headerShown: false}}
+      >
+      </IntroStack.Screen>
+    </IntroStack.Navigator>
+  )
 
-  return (
+  const TabNav = () => (
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
@@ -27,6 +41,8 @@ const Main = () => {
         activeTintColor: "#e91e63",
       }}
     >
+      {/*console.log("auth",AuthGlobal)*/}
+
       <Tab.Screen
         name="Home"
         component={HomeNavigator}
@@ -70,7 +86,23 @@ const Main = () => {
           ),
         }}
       />
+
     </Tab.Navigator>
+  )
+
+  const context = useContext(AuthGlobal)
+  /*
+  return (
+    <IntroStackScreen/>
+  )
+  */
+  const firstTimeOpen = "no";
+
+  return (
+    <>
+    { firstTimeOpen === "yes" && <IntroStackScreen/>}
+    { firstTimeOpen === "no" && <TabNav/>}
+    </>
   );
 };
 
