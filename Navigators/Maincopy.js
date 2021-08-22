@@ -36,6 +36,8 @@ import StaggerAnim from "../Screens/AnimationWin/StaggerAnim";
 import DelayAnim from "../Screens/AnimationWin/DelayAnim";
 import InterpolateOnNum from "../Screens/AnimationWin/Interpolate_on_num";
 import ColorInterpolate from "../Screens/AnimationWin/ColorInterpolate"
+import Home from "../Screens/Home/Home";
+
 
 const Tab = createBottomTabNavigator();
 
@@ -94,8 +96,8 @@ const MainCopy = () => {
       }}
     >
        <Tab.Screen
-          name="Animation"
-          component={ColorInterpolate}
+          name="HomeScreen"
+          component={Home}
           options={{
             tabBarIcon: ({ color }) => (
               <Icon name="magic" color={color} size={30} />
